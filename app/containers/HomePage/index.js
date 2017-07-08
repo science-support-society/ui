@@ -6,41 +6,77 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import Parallax from 'react-springy-parallax/dist';
+import Animated from 'animated/lib/targets/react-dom';
 
-import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
-import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
-import messages from './messages';
+import { makeSelectError, makeSelectLoading, makeSelectRepos } from 'containers/App/selectors';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
+import Mars from './../../static/mars-planet.png';
+import Nebula from './../../static/nebula.png';
+import { Background } from './Background';
+
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  /**
-   * when initial state username is not null, submit the form to load repos
-   */
+
   componentDidMount() {
     if (this.props.username && this.props.username.trim().length > 0) {
       this.props.onSubmitForm();
     }
   }
 
-  render() {
-    const { loading, error, repos } = this.props;
-    const reposListProps = {
-      loading,
-      error,
-      repos,
-    };
+  styles = {
+    mars: {
+      backgroundImage: `url(${Mars})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      backgroundSize: 'contain',
+    },
+    nebula: {
+      backgroundImage: `url(${Nebula})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      backgroundSize: 'contain',
+      display: 'flex',
+      justifyContent: 'flex-end',
+    },
+    headings: {
+      color: '#fff',
+      textTransform: 'uppercase',
+      textAlign: 'center',
+      top: '7%',
+      fontFamily: 'Roboto, sans-serif'
+    },
+    headingsMain: {
+      fontSize: '18.875rem',
+      fontWeight: 'bold',
+      letterSpacing: '2rem'
 
+    },
+    headingsSecondary: {
+      fontSize: '4rem',
+      letterSpacing: '.55rem'
+    },
+    scrollableMarker: {
+      color: '#fff',
+      fontSize: '4rem',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      top: '40%',
+      fontFamily: 'Roboto, sans-serif'
+    },
+    background: {
+      zIndex: 20
+    }
+  };
+
+
+  render() {
+
+    const linearEffect = (animation, toValue) => Animated.timing(animation, { toValue, duration: 0 });
     return (
       <article>
         <Helmet
@@ -49,55 +85,27 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             { name: 'description', content: 'A React.js Boilerplate application homepage' },
           ]}
         />
-        <div>
-          <CenteredSection>
-            <H2>
-              <FormattedMessage {...messages.startProjectHeader} />
-            </H2>
-            <p>
-              <FormattedMessage {...messages.startProjectMessage} />
-            </p>
-          </CenteredSection>
-          <Section>
-            <H2>
-              <FormattedMessage {...messages.trymeHeader} />
-            </H2>
-            <Form onSubmit={this.props.onSubmitForm}>
-              <label htmlFor="username">
-                <FormattedMessage {...messages.trymeMessage} />
-                <AtPrefix>
-                  <FormattedMessage {...messages.trymeAtPrefix} />
-                </AtPrefix>
-                <Input
-                  id="username"
-                  type="text"
-                  placeholder="mxstbr"
-                  value={this.props.username}
-                  onChange={this.props.onChangeUsername}
-                />
-              </label>
-            </Form>
-            <ReposList {...reposListProps} />
-          </Section>
-        </div>
+        <Background>
+          <div >
+            <Parallax style={this.styles.background} pages={2} effect={linearEffect}>
+              <Parallax.Layer offset={0} speed={-0.5} style={this.styles.nebula} />
+              <Parallax.Layer offset={0} speed={0.1} style={this.styles.mars}/>
+              <Parallax.Layer offset={0} speed={-0.7} style={this.styles.headings}>
+                <div style={this.styles.headingsMain}>Mars</div>
+                <div style={this.styles.headingsSecondary}>Support the mission </div>
+              </Parallax.Layer>
+              <Parallax.Layer offset={0} speed={-0.3} style={this.styles.scrollableMarker}>⇩</Parallax.Layer>
+            </Parallax>
+          </div>
+        </Background>
       </article>
     );
   }
 }
 
 HomePage.propTypes = {
-  loading: React.PropTypes.bool,
-  error: React.PropTypes.oneOfType([
-    React.PropTypes.object,
-    React.PropTypes.bool,
-  ]),
-  repos: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.bool,
-  ]),
   onSubmitForm: React.PropTypes.func,
-  username: React.PropTypes.string,
-  onChangeUsername: React.PropTypes.func,
+  username: React.PropTypes.string
 };
 
 export function mapDispatchToProps(dispatch) {
