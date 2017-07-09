@@ -8,8 +8,10 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { FormattedMessage } from 'react-intl';
 import Parallax from 'react-springy-parallax/dist';
 import Animated from 'animated/lib/targets/react-dom';
+import * as ArrowDownIcon from 'react-icons/lib/md/keyboard-arrow-down';
 
 import { makeSelectError, makeSelectLoading, makeSelectRepos } from 'containers/App/selectors';
 import { loadRepos } from '../App/actions';
@@ -18,16 +20,10 @@ import { makeSelectUsername } from './selectors';
 import Mars from './../../static/mars-planet.png';
 import Nebula from './../../static/nebula.png';
 import { Background } from './Background';
+import messages from './messages';
 
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-
-  componentDidMount() {
-    if (this.props.username && this.props.username.trim().length > 0) {
-      this.props.onSubmitForm();
-    }
-  }
-
   styles = {
     mars: {
       backgroundImage: `url(${Mars})`,
@@ -48,17 +44,17 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       textTransform: 'uppercase',
       textAlign: 'center',
       top: '7%',
-      fontFamily: 'Roboto, sans-serif'
+      fontFamily: 'Roboto, sans-serif',
     },
     headingsMain: {
       fontSize: '18.875rem',
       fontWeight: 'bold',
-      letterSpacing: '2rem'
-
+      letterSpacing: '2rem',
+      fontFamily: 'Roboto, sans-serif',
     },
     headingsSecondary: {
       fontSize: '4rem',
-      letterSpacing: '.55rem'
+      letterSpacing: '.55rem',
     },
     scrollableMarker: {
       color: '#fff',
@@ -66,35 +62,37 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       fontWeight: 'bold',
       textAlign: 'center',
       top: '40%',
-      fontFamily: 'Roboto, sans-serif'
+      fontFamily: 'Roboto, sans-serif',
     },
     background: {
-      zIndex: 20
-    }
+      zIndex: 20,
+    },
   };
 
 
   render() {
-
     const linearEffect = (animation, toValue) => Animated.timing(animation, { toValue, duration: 0 });
     return (
       <article>
         <Helmet
-          title="Home Page"
+          title="Mars"
           meta={[
-            { name: 'description', content: 'A React.js Boilerplate application homepage' },
+            { name: 'description', content: 'Science support project' },
           ]}
         />
         <Background>
           <div >
             <Parallax style={this.styles.background} pages={2} effect={linearEffect}>
               <Parallax.Layer offset={0} speed={-0.5} style={this.styles.nebula} />
-              <Parallax.Layer offset={0} speed={0.1} style={this.styles.mars}/>
+              <Parallax.Layer offset={0} speed={0.1} style={this.styles.mars} />
               <Parallax.Layer offset={0} speed={-0.7} style={this.styles.headings}>
-                <div style={this.styles.headingsMain}>Mars</div>
-                <div style={this.styles.headingsSecondary}>Support the mission </div>
+                <div style={this.styles.headingsMain}>
+                  <FormattedMessage {...messages.marsHeader} /></div>
+                <div style={this.styles.headingsSecondary}><FormattedMessage {...messages.participateHeader} /></div>
               </Parallax.Layer>
-              <Parallax.Layer offset={0} speed={-0.3} style={this.styles.scrollableMarker}>⇩</Parallax.Layer>
+              <Parallax.Layer offset={0} speed={-0.4} style={this.styles.scrollableMarker}>
+                <ArrowDownIcon />
+              </Parallax.Layer>
             </Parallax>
           </div>
         </Background>
@@ -105,7 +103,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
 
 HomePage.propTypes = {
   onSubmitForm: React.PropTypes.func,
-  username: React.PropTypes.string
+  username: React.PropTypes.string,
 };
 
 export function mapDispatchToProps(dispatch) {

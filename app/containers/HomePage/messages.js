@@ -6,9 +6,13 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  startProjectHeader: {
-    id: 'boilerplate.containers.HomePage.start_project.header',
-    defaultMessage: 'Start your next react project in seconds',
+  marsHeader: {
+    id: 'boilerplate.containers.HomePage.mars.header',
+    defaultMessage: 'Mars',
+  },
+  participateHeader: {
+    id: 'boilerplate.containers.HomePage.participate.header',
+    defaultMessage: 'Participate in mission',
   },
   startProjectMessage: {
     id: 'boilerplate.containers.HomePage.start_project.message',
