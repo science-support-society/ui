@@ -8,12 +8,12 @@ html,
 body {
   height: 100%;
   width: 100%;
-  fontFamily: 'Roboto, sans-serif';
+  font-family: "Roboto", sans-serif;
   color: #fff;  
 }
 
 p {
-  fontSize: '1.5rem';
+  font-size: 1.5rem;
 }
 
 @keyframes move-twink-back {

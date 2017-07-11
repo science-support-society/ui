@@ -18,6 +18,7 @@ import { SocialButtons } from './SocialButtons';
 import messages from './messages';
 import { YearsAgo } from './YearsAgo';
 import H2 from '../../components/H2/index';
+import { Reason } from './Reason';
 
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -40,14 +41,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       textTransform: 'uppercase',
       textAlign: 'center',
       fontSize: '18.875rem',
-      fontWeight: 'bold',
       letterSpacing: '2rem',
-    },
-    headingsSecondary: {
-      textTransform: 'uppercase',
-      textAlign: 'center',
-      fontSize: '4rem',
-      letterSpacing: '.55rem',
     },
     scrollableMarker: {
       fontSize: '4rem',
@@ -86,15 +80,15 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             <Parallax.Layer offset={0} speed={-0.6} style={this.styles.scrollableMarker}>
               <ArrowDownIcon />
             </Parallax.Layer>
-            <Parallax.Layer offset={0} speed={-0.4} style={{ top: '42%' }}>
+            <Parallax.Layer offset={1} speed={-0.4} >
               <p><FormattedMessage {...messages.howmuchParagraph} /></p>
               <p><FormattedMessage {...messages.progressParagraph} /></p>
             </Parallax.Layer>
-            <Parallax.Layer offset={0} speed={-0.4} style={{ top: '45%' }}>
+            <Parallax.Layer offset={1} speed={-0.4} >
               <YearsAgo />
+              <Reason />
             </Parallax.Layer>
           </Parallax>
-
 
           <SocialButtons />
         </Background>

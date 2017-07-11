@@ -6,7 +6,8 @@ export class Background extends React.PureComponent { // eslint-disable-line rea
       <div>
         <div className="stars"></div>
         <div className="twinkling"></div>
-        {this.props.children}
+        <div>{this.props.children}
+        </div>
       </div>
     );
   }
