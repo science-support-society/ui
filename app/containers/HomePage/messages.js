@@ -14,20 +14,12 @@ export default defineMessages({
     id: 'boilerplate.containers.HomePage.participate.header',
     defaultMessage: 'Participate in mission',
   },
-  startProjectMessage: {
-    id: 'boilerplate.containers.HomePage.start_project.message',
-    defaultMessage: 'A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices',
+  howmuchParagraph: {
+    id: 'boilerplate.containers.HomePage.howmuch.paragraph',
+    defaultMessage: 'How much are You ready to invest in Mission to Mars?',
   },
-  trymeHeader: {
-    id: 'boilerplate.containers.HomePage.tryme.header',
-    defaultMessage: 'Try me!',
-  },
-  trymeMessage: {
-    id: 'boilerplate.containers.HomePage.tryme.message',
-    defaultMessage: 'Show Github repositories by',
-  },
-  trymeAtPrefix: {
-    id: 'boilerplate.containers.HomePage.tryme.atPrefix',
-    defaultMessage: '@',
+  progressParagraph: {
+    id: 'boilerplate.containers.HomePage.progress.paragraph',
+    defaultMessage: 'Given the progress of the Mission is well communicated and visible.',
   },
 });

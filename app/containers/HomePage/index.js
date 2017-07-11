@@ -1,9 +1,3 @@
-/*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- */
-
 import React from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
@@ -20,7 +14,10 @@ import { makeSelectUsername } from './selectors';
 import Mars from './../../static/mars-planet.png';
 import Nebula from './../../static/nebula.png';
 import { Background } from './Background';
+import { SocialButtons } from './SocialButtons';
 import messages from './messages';
+import { YearsAgo } from './YearsAgo';
+import H2 from '../../components/H2/index';
 
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -39,36 +36,31 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       display: 'flex',
       justifyContent: 'flex-end',
     },
-    headings: {
-      color: '#fff',
+    headingsMain: {
       textTransform: 'uppercase',
       textAlign: 'center',
-      top: '7%',
-      fontFamily: 'Roboto, sans-serif',
-    },
-    headingsMain: {
       fontSize: '18.875rem',
       fontWeight: 'bold',
       letterSpacing: '2rem',
-      fontFamily: 'Roboto, sans-serif',
     },
     headingsSecondary: {
+      textTransform: 'uppercase',
+      textAlign: 'center',
       fontSize: '4rem',
       letterSpacing: '.55rem',
     },
     scrollableMarker: {
-      color: '#fff',
       fontSize: '4rem',
       fontWeight: 'bold',
       textAlign: 'center',
       top: '40%',
-      fontFamily: 'Roboto, sans-serif',
     },
     background: {
-      zIndex: 20,
+      zIndex: 3,
     },
   };
 
+      // position: "-webkit-sticky",
 
   render() {
     const linearEffect = (animation, toValue) => Animated.timing(animation, { toValue, duration: 0 });
@@ -81,20 +73,30 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           ]}
         />
         <Background>
-          <div >
-            <Parallax style={this.styles.background} pages={2} effect={linearEffect}>
-              <Parallax.Layer offset={0} speed={-0.5} style={this.styles.nebula} />
-              <Parallax.Layer offset={0} speed={0.1} style={this.styles.mars} />
-              <Parallax.Layer offset={0} speed={-0.7} style={this.styles.headings}>
-                <div style={this.styles.headingsMain}>
-                  <FormattedMessage {...messages.marsHeader} /></div>
-                <div style={this.styles.headingsSecondary}><FormattedMessage {...messages.participateHeader} /></div>
-              </Parallax.Layer>
-              <Parallax.Layer offset={0} speed={-0.4} style={this.styles.scrollableMarker}>
-                <ArrowDownIcon />
-              </Parallax.Layer>
-            </Parallax>
-          </div>
+          <Parallax style={this.styles.background} pages={2} effect={linearEffect}>
+            <Parallax.Layer offset={0} speed={-0.5} style={this.styles.nebula} />
+            <Parallax.Layer offset={0} speed={0.1} style={this.styles.mars} />
+            <Parallax.Layer offset={0} speed={-0.7} style={{ top: '7%' }}>
+              <div style={this.styles.headingsMain}>
+                <FormattedMessage {...messages.marsHeader} /></div>
+            </Parallax.Layer>
+            <Parallax.Layer offset={0} speed={-0.6} style={{ top: '25%' }}>
+              <H2><FormattedMessage {...messages.participateHeader} /></H2>
+            </Parallax.Layer>
+            <Parallax.Layer offset={0} speed={-0.6} style={this.styles.scrollableMarker}>
+              <ArrowDownIcon />
+            </Parallax.Layer>
+            <Parallax.Layer offset={0} speed={-0.4} style={{ top: '42%' }}>
+              <p><FormattedMessage {...messages.howmuchParagraph} /></p>
+              <p><FormattedMessage {...messages.progressParagraph} /></p>
+            </Parallax.Layer>
+            <Parallax.Layer offset={0} speed={-0.4} style={{ top: '45%' }}>
+              <YearsAgo />
+            </Parallax.Layer>
+          </Parallax>
+
+
+          <SocialButtons />
         </Background>
       </article>
     );

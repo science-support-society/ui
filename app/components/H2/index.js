@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 const H2 = styled.h2`
-  font-size: 1.5em;
+  textTransform: uppercase;
+  textAlign: center;
+  fontSize: 4rem;
+  letter-spacing: .55rem;
 `;
 
 export default H2;

@@ -22,6 +22,6 @@ injectGlobal`
     min-width: 100%;
   }
   
-  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
-  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+  .icon.light { color: rgba(255, 255, 255, 1); }
+  .icon.inactive { color: rgba(255, 255, 255, 0.3); }
 `;

@@ -4,12 +4,17 @@ import Twinkle from './static/twinkling.png';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
-  html,
-  body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  
-  }
+html,
+body {
+  height: 100%;
+  width: 100%;
+  fontFamily: 'Roboto, sans-serif';
+  color: #fff;  
+}
+
+p {
+  fontSize: '1.5rem';
+}
 
 @keyframes move-twink-back {
     from {background-position:0 0;}
@@ -41,12 +46,12 @@ injectGlobal`
 
 .stars {
   background:#000 url(${Stars}) repeat top center;
-  z-index: 0;
+  z-index: 1;
 }
 
 .twinkling{
   background:transparent url(${Twinkle}) repeat top center;
-  z-index: 1;
+  z-index: 2;
 
   -moz-animation:move-twink-back 200s linear infinite;
   -ms-animation:move-twink-back 200s linear infinite;
