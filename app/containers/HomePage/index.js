@@ -13,7 +13,6 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import Mars from './../../static/mars-planet.png';
 import Nebula from './../../static/nebula.png';
-import { Background } from './Background';
 import { SocialButtons } from './SocialButtons';
 import messages from './messages';
 import { YearsAgo } from './YearsAgo';
@@ -47,7 +46,6 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       fontSize: '4rem',
       fontWeight: 'bold',
       textAlign: 'center',
-      top: '40%',
     },
     background: {
       zIndex: 3,
@@ -66,32 +64,32 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             { name: 'description', content: 'Science support project' },
           ]}
         />
-        <Background>
-          <Parallax style={this.styles.background} pages={2} effect={linearEffect}>
-            <Parallax.Layer offset={0} speed={-0.5} style={this.styles.nebula} />
-            <Parallax.Layer offset={0} speed={0.1} style={this.styles.mars} />
-            <Parallax.Layer offset={0} speed={-0.7} style={{ top: '7%' }}>
-              <div style={this.styles.headingsMain}>
-                <FormattedMessage {...messages.marsHeader} /></div>
-            </Parallax.Layer>
-            <Parallax.Layer offset={0} speed={-0.6} style={{ top: '25%' }}>
-              <H2><FormattedMessage {...messages.participateHeader} /></H2>
-            </Parallax.Layer>
-            <Parallax.Layer offset={0} speed={-0.6} style={this.styles.scrollableMarker}>
-              <ArrowDownIcon />
-            </Parallax.Layer>
-            <Parallax.Layer offset={1} speed={-0.4} >
-              <p><FormattedMessage {...messages.howmuchParagraph} /></p>
-              <p><FormattedMessage {...messages.progressParagraph} /></p>
-            </Parallax.Layer>
-            <Parallax.Layer offset={1} speed={-0.4} >
-              <YearsAgo />
-              <Reason />
-            </Parallax.Layer>
-          </Parallax>
+        <Parallax style={this.styles.background} pages={3} effect={linearEffect}>
+          <Parallax.Layer offset={0} speed={-0.5} style={this.styles.nebula} />
+          <Parallax.Layer offset={0} speed={0.1} style={this.styles.mars} />
+          <Parallax.Layer offset={0.2} speed={0} >
+            <div style={this.styles.headingsMain}>
+              <FormattedMessage {...messages.marsHeader} /></div>
+          </Parallax.Layer>
+          <Parallax.Layer offset={0.6} speed={0.4}>
+            <H2><FormattedMessage {...messages.participateHeader} /></H2>
+          </Parallax.Layer>
+          <Parallax.Layer offset={0.7} speed={0.6}>
+            <H2><ArrowDownIcon /></H2>
+          </Parallax.Layer>
+          <Parallax.Layer offset={0.8} speed={0.3} >
+            <p><FormattedMessage {...messages.howmuchParagraph} /></p>
+            <p><FormattedMessage {...messages.progressParagraph} /></p>
+          </Parallax.Layer>
+          <Parallax.Layer offset={1} speed={0} >
+            <YearsAgo />
+          </Parallax.Layer>
+          <Parallax.Layer offset={2} speed={0} >
+            <Reason />
+          </Parallax.Layer>
+        </Parallax>
 
-          <SocialButtons />
-        </Background>
+        <SocialButtons />
       </article>
     );
   }

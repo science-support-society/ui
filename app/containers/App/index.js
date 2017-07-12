@@ -11,6 +11,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
 import withProgressBar from 'components/ProgressBar';
+import { Background } from './Background';
 
 const AppWrapper = styled.div`
   margin: 0 auto;
@@ -30,6 +31,7 @@ export function App(props) {
           { name: 'description', content: 'A React.js Boilerplate application' },
         ]}
       />
+      <Background />
       {React.Children.toArray(props.children)}
     </AppWrapper>
   );

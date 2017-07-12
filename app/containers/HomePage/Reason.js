@@ -13,7 +13,6 @@ export class Reason extends React.PureComponent { // eslint-disable-line react/p
         <p><FormattedMessage {...messages.reasonParagraph1} /></p>
         <p><FormattedMessage {...messages.reasonParagraph2} /></p>
         <p><FormattedMessage {...messages.reasonParagraph3} /></p>
-
       </div>
     );
   }
