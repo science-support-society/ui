@@ -8,16 +8,20 @@ const StickyWrapper = styled.div`
   z-index: 40;
   position: fixed;
   width: 6rem;
-  top: 1rem;
-  right: 1rem;
-  color: white;
-  background-color: red`;
+  top: 1.5rem;
+  right: 0;`;
 
 const SocialButton = styled.div`
+  color: white;
   width: 6rem;
   height: 6rem;
-  background-color: blue;
+  background-color: rgba(256, 256, 256, 0.6);
   margin: 1px 0 1px;
+  
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(256, 256, 256, 0.8);
+  }
 `;
 
 export class SocialButtons extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
