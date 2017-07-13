@@ -9,12 +9,11 @@ const ImageCard = styled.div`
   position: relative;
 `;
 
-const ImageTitle = styled.span`
+const ImageCaption = styled.div`
    position: absolute; 
    top: 80%; 
-   left: 0; 
+   left: 1rem; 
    width: 100%;
-   font-size: 1.5rem; 
 `;
 
 export class YearsAgo extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -24,12 +23,14 @@ export class YearsAgo extends React.PureComponent { // eslint-disable-line react
       <div>
         <H2><FormattedMessage {...messages.yearsAgoHeader} /></H2>
         <ImageCard>
-          <img src={Horizontal} alt="" />
-          <ImageTitle>
-            <FormattedMessage {...messages.imageCaption1} />
-            <br />
-            <FormattedMessage {...messages.imageCaption2} />
-          </ImageTitle>
+          <img src={Horizontal} alt="" className="scalableImg" />
+          <ImageCaption>
+            <p>
+              <FormattedMessage {...messages.imageCaption1} />
+              <br />
+              <FormattedMessage {...messages.imageCaption2} />
+            </p>
+          </ImageCaption>
         </ImageCard>
       </div>
     );

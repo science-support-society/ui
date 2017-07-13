@@ -10,11 +10,19 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
-  color: #fff;  
+  color: #fff;
+  background-color: black;
+  overflow: hidden;
 }
 
 p {
   font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.scalableImg {
+  max-width: 100%;
+  height: auto;
 }
 
 @keyframes move-twink-back {
@@ -46,7 +54,7 @@ p {
 }
 
 .stars {
-  background:#000 url(${Stars}) repeat top center;
+  background: url(${Stars}) repeat top center;
   z-index: 1;
 }
 
