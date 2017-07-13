@@ -18,6 +18,7 @@ import messages from './messages';
 import { YearsAgo } from './YearsAgo';
 import H1 from '../../components/H1/index';
 import { Reason } from './Reason';
+import { EmailSubscription } from './EmailSubscription';
 
 const ScrollableMarker = styled.div`
   font-size: 6rem;
@@ -88,8 +89,9 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <Parallax.Layer offset={1} speed={0} >
             <YearsAgo />
           </Parallax.Layer>
-          <Parallax.Layer offset={1.8} speed={0} >
+          <Parallax.Layer offset={1.7} speed={0.1} >
             <Reason />
+            <EmailSubscription />
           </Parallax.Layer>
         </Parallax>
 

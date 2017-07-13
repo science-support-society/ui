@@ -26,6 +26,10 @@ p {
   height: auto;
 }
 
+.newChapter {
+  padding-top: 10rem;
+}
+
 .readable {
   margin: auto;
   max-width: 960px;
