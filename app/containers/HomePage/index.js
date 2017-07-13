@@ -12,11 +12,13 @@ import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import Mars from './../../static/mars-planet.png';
+// import MiniMars from './../../static/mars-planet-min.webp';
 import Nebula from './../../static/nebula.png';
 import { SocialButtons } from './SocialButtons';
 import messages from './messages';
 import { YearsAgo } from './YearsAgo';
 import H2 from '../../components/H2/index';
+import H1 from '../../components/H1/index';
 import { Reason } from './Reason';
 
 
@@ -41,6 +43,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       textAlign: 'center',
       fontSize: '18.875rem',
       letterSpacing: '2rem',
+      fontWeight: 700,
     },
     scrollableMarker: {
       fontSize: '4rem',
@@ -72,7 +75,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
               <FormattedMessage {...messages.marsHeader} /></div>
           </Parallax.Layer>
           <Parallax.Layer offset={0.6} speed={0.4}>
-            <H2><FormattedMessage {...messages.participateHeader} /></H2>
+            <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
           <Parallax.Layer offset={0.7} speed={0.6}>
             <H2><ArrowDownIcon /></H2>

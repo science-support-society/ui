@@ -9,6 +9,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Roboto", sans-serif;
+  font-weight: 100;
   color: #fff;  
 }
 

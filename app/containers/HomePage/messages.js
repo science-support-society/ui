@@ -26,6 +26,14 @@ export default defineMessages({
     id: 'boilerplate.containers.YearsAgo.50yearsAgo.header',
     defaultMessage: '50 years ago humans walked the moon',
   },
+  imageCaption1: {
+    id: 'boilerplate.containers.YearsAgo.accomplishment.caption',
+    defaultMessage: 'Arguably one of the most ambitious accomplishment of all time.',
+  },
+  imageCaption2: {
+    id: 'boilerplate.containers.YearsAgo.orbit.caption',
+    defaultMessage: 'Since then no manned mission has ever got above low Earth orbit.',
+  },
   reasonHeader: {
     id: 'boilerplate.containers.Reason.reasonIsSimple.header',
     defaultMessage: 'Reason is simple',
@@ -42,5 +50,6 @@ export default defineMessages({
     id: 'boilerplate.containers.Reason.reason3.paragraph',
     defaultMessage: 'With warmer climate ice in the ground would melt and form the first springs, rivers, lakes and eventually seas. There will be clouds and rain. We could grow plants that would spread and paint Mars from red to green. Current research states – this is possible in our lifetime, if we go for it. Lets invest in Mission to Mars.',
   },
+
 
 });

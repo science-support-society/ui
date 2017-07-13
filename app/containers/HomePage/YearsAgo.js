@@ -13,7 +13,8 @@ const ImageTitle = styled.span`
    position: absolute; 
    top: 80%; 
    left: 0; 
-   width: 100%; 
+   width: 100%;
+   font-size: 1.5rem; 
 `;
 
 export class YearsAgo extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -24,8 +25,11 @@ export class YearsAgo extends React.PureComponent { // eslint-disable-line react
         <H2><FormattedMessage {...messages.yearsAgoHeader} /></H2>
         <ImageCard>
           <img src={Horizontal} alt="" />
-          <ImageTitle>Arguably one of the most ambitious accomplishment of all time. <br />
-                      Since then no manned mission has ever got above low Earth orbit.</ImageTitle>
+          <ImageTitle>
+            <FormattedMessage {...messages.imageCaption1} />
+            <br />
+            <FormattedMessage {...messages.imageCaption2} />
+          </ImageTitle>
         </ImageCard>
       </div>
     );
