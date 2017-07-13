@@ -77,8 +77,10 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
           <Parallax.Layer offset={0.8} speed={0.3} >
-            <p><FormattedMessage {...messages.howmuchParagraph} /></p>
-            <p><FormattedMessage {...messages.progressParagraph} /></p>
+            <p className="readable"><FormattedMessage {...messages.howmuchParagraph} />
+              <br />
+              <FormattedMessage {...messages.progressParagraph} />
+            </p>
           </Parallax.Layer>
           <Parallax.Layer offset={0.85} speed={0.6}>
             <ScrollableMarker><ArrowDownIcon /></ScrollableMarker>

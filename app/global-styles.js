@@ -18,11 +18,17 @@ body {
 p {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
+  text-align: left;
 }
 
 .scalableImg {
   max-width: 100%;
   height: auto;
+}
+
+.readable {
+  margin: auto;
+  max-width: 960px;
 }
 
 @keyframes move-twink-back {

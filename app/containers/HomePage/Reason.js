@@ -8,7 +8,7 @@ export class Reason extends React.PureComponent { // eslint-disable-line react/p
 
   render() {
     return (
-      <div>
+      <div className="readable">
         <H2><FormattedMessage {...messages.reasonHeader} /></H2>
         <p><FormattedMessage {...messages.reasonParagraph1} /></p>
         <p><FormattedMessage {...messages.reasonParagraph2} /></p>

@@ -20,7 +20,7 @@ export class YearsAgo extends React.PureComponent { // eslint-disable-line react
 
   render() {
     return (
-      <div>
+      <div className="readable">
         <H2><FormattedMessage {...messages.yearsAgoHeader} /></H2>
         <ImageCard>
           <img src={Horizontal} alt="" className="scalableImg" />
