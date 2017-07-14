@@ -19,13 +19,12 @@ const SubscribeButton = styled.button`
   margin-left: -6px;
   padding-left: 16px;
   background-color: rgba(255,255,255, 0.3);
-  
 `;
 
 const NoSpam = styled.div`
   padding-top: 5px;
   letter-spacing: 0.1rem;
-`
+`;
 
 export class EmailSubscription extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 

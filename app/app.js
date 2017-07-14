@@ -8,6 +8,7 @@
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 // Import all the third party stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -44,6 +45,8 @@ import './global-styles';
 
 // Import routes
 import createRoutes from './routes';
+
+OfflinePluginRuntime.install();
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)

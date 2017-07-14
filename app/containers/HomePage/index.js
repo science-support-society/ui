@@ -89,7 +89,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <Parallax.Layer offset={1} speed={0} >
             <YearsAgo />
           </Parallax.Layer>
-          <Parallax.Layer offset={1.7} speed={0.1} >
+          <Parallax.Layer offset={1.8} speed={0.1} >
             <Reason />
             <EmailSubscription />
           </Parallax.Layer>
