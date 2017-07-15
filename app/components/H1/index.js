@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const H1 = styled.h1`
   text-transform: uppercase;
   text-align: center;
-  font-size: 4rem;
+  // font-size: 4rem;
+  font-size: 3vw;
   letter-spacing: 0.55rem;
   font-weight: 400;
 `;

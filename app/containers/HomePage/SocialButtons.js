@@ -16,7 +16,7 @@ const SocialButton = styled.div`
   width: 6rem;
   height: 6rem;
   background-color: rgba(256, 256, 256, 0.6);
-  margin: 1px 0 1px;
+  margin: 1px 0;
   
   &:hover {
     cursor: pointer;

@@ -38,15 +38,22 @@ const Mars = styled.div`
   height: 100%;
 `;
 
+// TODO: what about vw and rems?
 const MarsHeading = styled.div`
   text-transform: uppercase;
   text-align: center;
   font-size: 18.875rem;
   letter-spacing: 2rem;
+  
   font-weight: 700;
   
-  @media (max-width: 900px) {
-    font-size: 10rem;
+  @media (max-width: 1024px) {
+    font-size: 12rem;
+    letter-spacing: 1rem;
+  }
+  
+  @media (max-width: 670px) {
+    font-size: 5rem;
     letter-spacing: 1rem;
   }
 `;
@@ -68,13 +75,14 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           ]}
         />
         <Parallax pages={3} effect={linearEffect}>
+          {/* iphone 6plus -0.02*/}
           <Parallax.Layer offset={0} speed={0.1} ><Mars /></Parallax.Layer>
-          <Parallax.Layer offset={0.15} speed={0} >
+          <Parallax.Layer offset={0.2} speed={0} >
             <MarsHeading>
               <FormattedMessage {...messages.marsHeader} />
             </MarsHeading>
           </Parallax.Layer>
-          <Parallax.Layer offset={0.6} speed={0.4}>
+          <Parallax.Layer offset={0.4} speed={0.4}>
             <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
           <Parallax.Layer offset={0.8} speed={0.3} >
