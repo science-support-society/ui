@@ -7,7 +7,6 @@ injectGlobal`
 html,
 body {
   height: 100%;
-  width: 100%;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   color: #fff;
@@ -50,6 +49,28 @@ p {
 @-ms-keyframes move-twink-back {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
+}
+
+@keyframes bounce {
+0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+15% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+30% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+45% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+60% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
 }
 
 .stars, .twinkling, .clouds {
