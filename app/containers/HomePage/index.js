@@ -24,6 +24,8 @@ const ScrollableMarker = styled.div`
   font-size: 6rem;
   color: rgba(255, 255, 255, 0.3);
   text-align: center;
+  -webkit-animation: bounce 1s ease infinite;
+  animation: bounce 1.5s ease infinite;
   
   &:hover {
     cursor: pointer;
@@ -34,28 +36,15 @@ const ScrollableMarker = styled.div`
 const Mars = styled.div`
   background: url(${MarsPicture}) no-repeat center center;
   background-size: contain;
-  width: 100%;
   height: 100%;
 `;
 
-// TODO: what about vw and rems?
 const MarsHeading = styled.div`
   text-transform: uppercase;
   text-align: center;
-  font-size: 18.875rem;
-  letter-spacing: 2rem;
-  
+  font-size: 18vmin;
+  letter-spacing: 3.5vmin;
   font-weight: 700;
-  
-  @media (max-width: 1024px) {
-    font-size: 12rem;
-    letter-spacing: 1rem;
-  }
-  
-  @media (max-width: 670px) {
-    font-size: 5rem;
-    letter-spacing: 1rem;
-  }
 `;
 
 const ContentWrapper = styled.article`
@@ -65,6 +54,8 @@ const ContentWrapper = styled.article`
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   render() {
+    console.log(screen.width, screen.height, screen.width < screen.height ? 0.15 : 0.35);
+
     const linearEffect = (animation, toValue) => Animated.timing(animation, { toValue, duration: 0 });
     return (
       <ContentWrapper>
@@ -75,14 +66,13 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           ]}
         />
         <Parallax pages={3} effect={linearEffect}>
-          {/* iphone 6plus -0.02*/}
           <Parallax.Layer offset={0} speed={0.1} ><Mars /></Parallax.Layer>
-          <Parallax.Layer offset={0.2} speed={0} >
+          <Parallax.Layer offset={0.25} speed={0} >
             <MarsHeading>
               <FormattedMessage {...messages.marsHeader} />
             </MarsHeading>
           </Parallax.Layer>
-          <Parallax.Layer offset={0.4} speed={0.4}>
+          <Parallax.Layer offset={0.45} speed={0.3}>
             <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
           <Parallax.Layer offset={0.8} speed={0.3} >
@@ -97,7 +87,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <Parallax.Layer offset={1} speed={0} >
             <YearsAgo />
           </Parallax.Layer>
-          <Parallax.Layer offset={1.8} speed={0.1} >
+          <Parallax.Layer offset={1.8} speed={0} >
             <Reason />
             <EmailSubscription />
           </Parallax.Layer>
