@@ -15,8 +15,8 @@ body {
 }
 
 p {
-  font-size: 1.5rem;
-  letter-spacing: 0.1rem;
+  font-size: 2vmin;
+  letter-spacing: 0.2vmin;
   text-align: left;
 }
 
