@@ -72,7 +72,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
               <FormattedMessage {...messages.marsHeader} />
             </MarsHeading>
           </Parallax.Layer>
-          <Parallax.Layer offset={0.45} speed={0.3}>
+          <Parallax.Layer offset={0.5} speed={0.3}>
             <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
           <Parallax.Layer offset={0.8} speed={0.3} >

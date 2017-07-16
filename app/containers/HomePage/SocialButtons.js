@@ -7,14 +7,15 @@ import * as YoutubeIcon from 'react-icons/lib/ti/social-youtube';
 const StickyWrapper = styled.div`
   z-index: 40;
   position: fixed;
-  width: 6rem;
-  top: 1.5rem;
+  top: 3vmin;
   right: 0;`;
+
+const BUTTON_SIZE = '4rem';
 
 const SocialButton = styled.div`
   color: white;
-  width: 6rem;
-  height: 6rem;
+  width: ${BUTTON_SIZE};
+  height: ${BUTTON_SIZE};
   background-color: rgba(256, 256, 256, 0.6);
   margin: 1px 0;
   
@@ -30,7 +31,7 @@ export class SocialButtons extends React.PureComponent { // eslint-disable-line 
     socialButton: {
       width: '50%',
       height: '50%',
-      margin: '1.5rem 0 0 1.5rem',
+      margin: '1rem 0 0 1rem',
     },
   }
   render() {
