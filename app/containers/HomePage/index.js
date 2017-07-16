@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { FormattedMessage } from 'react-intl';
 import Parallax from 'react-springy-parallax/dist';
-import Animated from 'animated/lib/targets/react-dom';
 import * as ArrowDownIcon from 'react-icons/lib/md/keyboard-arrow-down';
 import styled from 'styled-components';
 
@@ -54,9 +53,7 @@ const ContentWrapper = styled.article`
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   render() {
-    console.log(screen.width, screen.height, screen.width < screen.height ? 0.15 : 0.35);
-
-    const linearEffect = (animation, toValue) => Animated.timing(animation, { toValue, duration: 0 });
+    // const linearEffect = (animation, toValue) => Animated.timing(animation, { toValue, duration: 0 });
     return (
       <ContentWrapper>
         <Helmet
@@ -65,7 +62,8 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             { name: 'description', content: 'Science support project' },
           ]}
         />
-        <Parallax pages={3} effect={linearEffect} >
+        {/* effect={linearEffect}*/}
+        <Parallax pages={3} ref={(ref) => (this.parallax = ref)} >
           <Parallax.Layer offset={0} speed={0.1} ><Mars /></Parallax.Layer>
           <Parallax.Layer offset={0.25} speed={0} >
             <MarsHeading>
@@ -81,10 +79,10 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
               <FormattedMessage {...messages.progressParagraph} />
             </p>
           </Parallax.Layer>
-          <Parallax.Layer offset={0.85} speed={0.6}>
-            <ScrollableMarker><ArrowDownIcon /></ScrollableMarker>
+          <Parallax.Layer offset={0.8} speed={3}>
+            <ScrollableMarker><ArrowDownIcon onClick={() => this.parallax.scrollTo(0.25)} /></ScrollableMarker>
           </Parallax.Layer>
-          <Parallax.Layer offset={1} speed={0} >
+          <Parallax.Layer offset={1} speed={0}>
             <YearsAgo />
             <br /><br />
             <Reason />
