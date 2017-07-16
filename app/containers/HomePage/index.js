@@ -65,7 +65,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             { name: 'description', content: 'Science support project' },
           ]}
         />
-        <Parallax pages={3} effect={linearEffect}>
+        <Parallax pages={3} effect={linearEffect} >
           <Parallax.Layer offset={0} speed={0.1} ><Mars /></Parallax.Layer>
           <Parallax.Layer offset={0.25} speed={0} >
             <MarsHeading>
@@ -86,8 +86,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           </Parallax.Layer>
           <Parallax.Layer offset={1} speed={0} >
             <YearsAgo />
-          </Parallax.Layer>
-          <Parallax.Layer offset={2} speed={0} >
+            <br /><br />
             <Reason />
             <EmailSubscription />
           </Parallax.Layer>

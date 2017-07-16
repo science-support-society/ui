@@ -18,6 +18,11 @@ p {
   font-size: 2vmin;
   letter-spacing: 0.2vmin;
   text-align: left;
+  
+  @media (max-width: 400px) {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
 }
 
 .scalableImg {
