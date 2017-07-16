@@ -33,7 +33,8 @@ export class SocialButtons extends React.PureComponent { // eslint-disable-line 
       height: '50%',
       margin: '1rem 0 0 1rem',
     },
-  }
+  };
+
   render() {
     return (
       <StickyWrapper>
