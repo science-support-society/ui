@@ -7,6 +7,7 @@ injectGlobal`
 html,
 body {
   height: 100%;
+  width: 100%;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   color: #fff;
@@ -77,7 +78,7 @@ p {
     -webkit-transform: translateY(0px);
     transform: translateY(0px);
 }
-
+}
 .stars, .twinkling, .clouds {
   position:absolute;
   top:0;
