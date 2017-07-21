@@ -31,7 +31,7 @@ export class EmailSubscription extends React.PureComponent { // eslint-disable-l
   render() {
     return (
       <div className="readable newChapter">
-        <form action="">
+        <form action="" name="subscribe">
           <div>
             <EmailInput />
             <SubscribeButton>Subscribe</SubscribeButton>
