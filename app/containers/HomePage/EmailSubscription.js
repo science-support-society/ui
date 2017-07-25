@@ -31,12 +31,12 @@ export class EmailSubscription extends React.PureComponent { // eslint-disable-l
   render() {
     return (
       <div className="readable newChapter">
-        <form action="" name="subscribe">
+        <form action="" name="subscribe" className="subscribeForm">
           <div>
             <EmailInput />
-            <SubscribeButton>Subscribe</SubscribeButton>
+            <SubscribeButton type="submit">Subscribe</SubscribeButton>
           </div>
-          <NoSpam>We don't spam</NoSpam>
+          <NoSpam>We dont spam</NoSpam>
         </form>
       </div>
     );

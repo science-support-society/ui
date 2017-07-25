@@ -1,5 +1,4 @@
 import { FormattedMessage } from 'react-intl';
-import styled from 'styled-components';
 import React from 'react';
 import H2 from '../../components/H2/index';
 import messages from './messages';
