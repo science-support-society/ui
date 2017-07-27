@@ -25,6 +25,7 @@ const initialState = fromJS({
   currentUser: false,
   userData: {
     repositories: false,
+    email: undefined,
   },
 });
 

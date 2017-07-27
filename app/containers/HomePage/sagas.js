@@ -8,7 +8,7 @@ import { LOAD_REPOS } from 'containers/App/constants';
 import { reposLoaded, repoLoadingError } from 'containers/App/actions';
 
 import request from 'utils/request';
-import { makeSelectUsername } from 'containers/HomePage/selectors';
+import { makeSelectUsername, makeSelectEmail } from 'containers/HomePage/selectors';
 
 /**
  * Github repos request/response handler
@@ -39,6 +39,12 @@ export function* githubData() {
   // Suspend execution until location changes
   yield take(LOCATION_CHANGE);
   yield cancel(watcher);
+}
+
+export function* registerNewSubscriber() {
+  /* const email = yield select(makeSelectEmail());
+  const requestURL = 'here_path_to_post';
+  yield call(request, requestURL);*/
 }
 
 // Bootstrap sagas

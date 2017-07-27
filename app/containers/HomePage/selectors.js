@@ -11,7 +11,13 @@ const makeSelectUsername = () => createSelector(
   (homeState) => homeState.get('username')
 );
 
+const makeSelectEmail = () => createSelector(
+  selectHome,
+  (globalState) => globalState.get('email')
+);
+
 export {
   selectHome,
   makeSelectUsername,
+  makeSelectEmail,
 };

@@ -1,5 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
+import { subscribe } from './actions';
+import { makeSelectEmail } from './selectors';
+import { HomePage } from './index';
 
 const EmailInput = styled.input`
   background-color: white;
@@ -11,7 +16,7 @@ const EmailInput = styled.input`
   border-radius: 5px;
 `;
 
-const SubscribeButton = styled.button`
+const SubscribeButton = styled.a`
   height: 3.5rem;
   font-size: 1.5rem;
   color: black;
@@ -31,10 +36,10 @@ export class EmailSubscription extends React.PureComponent { // eslint-disable-l
   render() {
     return (
       <div className="readable newChapter">
-        <form action="" name="subscribe" className="subscribeForm">
+        <form onSubmit={this.props.onSubmitForm} name="subscribe" className="subscribeForm">
           <div>
-            <EmailInput />
-            <SubscribeButton type="submit">Subscribe</SubscribeButton>
+            <EmailInput type="email" value={this.props.email} />
+            <SubscribeButton onClick={this.props.onSubmitForm}>Subscribe</SubscribeButton>
           </div>
           <NoSpam>We dont spam</NoSpam>
         </form>
@@ -43,3 +48,23 @@ export class EmailSubscription extends React.PureComponent { // eslint-disable-l
   }
 }
 
+EmailSubscription.propTypes = {
+  onSubmitForm: React.PropTypes.func,
+  email: React.PropTypes.string,
+};
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    onSubmitForm: (evt) => {
+      // if (evt !== undefined && evt.preventDefault) evt.preventDefault();
+      console.log('subscribe event', evt);
+      dispatch(subscribe('fake email'));
+    },
+  };
+}
+
+const mapStateToProps = createStructuredSelector({
+  email: makeSelectEmail(),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmailSubscription);
