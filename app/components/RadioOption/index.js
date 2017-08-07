@@ -12,6 +12,7 @@ RadioOption.propTypes = {
   value: React.PropTypes.string.isRequired,
   message: React.PropTypes.object,
   key: React.PropTypes.number,
+  onToggle: React.PropTypes.func,
   intl: intlShape.isRequired,
 };
 
