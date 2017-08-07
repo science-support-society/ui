@@ -15,11 +15,20 @@
  *    }
  */
 
-import { SUBSCRIBE } from './constants';
+export const SUBSCRIBE = 'sciencesupport/EmailSubscription/SUBSCRIBE';
+export const CHANGE_AMOUNT = 'sciencesupport/HomeContainer/CHANGE_AMOUNT';
 
 export function subscribe(email) {
   return {
     type: SUBSCRIBE,
     email,
   };
+}
+
+export function changeAmount(amount) {
+  console.log("amount", amount);
+  return {
+    type: CHANGE_AMOUNT,
+    amount,
+  }
 }

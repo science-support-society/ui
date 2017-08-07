@@ -3,11 +3,11 @@ import React from 'react';
 import RadioOption from '../RadioOption';
 
 function RadioGroup(props) {
-  let content = ("aaa");
+  let content = ("aaa no props");
 
   if (props.values) {
     content = props.values.map((value) => (
-      <RadioOption key={value} value={value} message={props.messages[value]} onChange={props.onToggle} />
+      <RadioOption key={value} value={value} onChange={props.onToggle} />
     ));
   }
 
@@ -20,7 +20,7 @@ function RadioGroup(props) {
 
 RadioGroup.propTypes = {
   onToggle: React.PropTypes.func,
-  values: React.PropTypes.array,
+  values: React.PropTypes.object,
   messages: React.PropTypes.object,
 };
 

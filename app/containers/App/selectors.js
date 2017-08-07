@@ -1,15 +1,6 @@
-/**
- * The global state selectors
- */
-
 import { createSelector } from 'reselect';
 
 const selectGlobal = (state) => state.get('global');
-
-const makeSelectCurrentUser = () => createSelector(
-  selectGlobal,
-  (globalState) => globalState.get('currentUser')
-);
 
 const makeSelectLoading = () => createSelector(
   selectGlobal,
@@ -21,9 +12,9 @@ const makeSelectError = () => createSelector(
   (globalState) => globalState.get('error')
 );
 
-const makeSelectRepos = () => createSelector(
+export const makeSelectAmountsToDonate = () => createSelector(
   selectGlobal,
-  (globalState) => globalState.getIn(['userData', 'repositories'])
+  (state) => state.get('amountsToDonate')
 );
 
 const makeSelectLocationState = () => {
@@ -44,9 +35,7 @@ const makeSelectLocationState = () => {
 
 export {
   selectGlobal,
-  makeSelectCurrentUser,
   makeSelectLoading,
   makeSelectError,
-  makeSelectRepos,
   makeSelectLocationState,
 };

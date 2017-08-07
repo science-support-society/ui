@@ -10,8 +10,7 @@
  *   return state.set('yourStateVariable', true);
  */
 import { fromJS } from 'immutable';
-
-import { SUBSCRIBE } from './constants';
+import {CHANGE_AMOUNT, SUBSCRIBE} from './actions';
 
 // The initial state of the App
 const initialState = fromJS({
@@ -21,13 +20,10 @@ const initialState = fromJS({
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    /* case CHANGE_USERNAME:
-
-      // Delete prefixed '@' from the github username
-      return state
-        .set('username', action.name.replace(/@/gi, ''));*/
     case SUBSCRIBE:
       return state.set('email', action.email);
+    case CHANGE_AMOUNT:
+      return state.set('amount', action.amount);
     default:
       return state;
   }

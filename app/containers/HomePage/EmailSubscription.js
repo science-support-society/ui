@@ -4,7 +4,6 @@ import { createStructuredSelector } from 'reselect';
 import styled from 'styled-components';
 import { subscribe } from './actions';
 import { makeSelectEmail } from './selectors';
-import { HomePage } from './index';
 
 const EmailInput = styled.input`
   background-color: white;

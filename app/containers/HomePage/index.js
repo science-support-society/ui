@@ -7,10 +7,8 @@ import Parallax from 'react-springy-parallax/dist';
 import * as ArrowDownIcon from 'react-icons/lib/md/keyboard-arrow-down';
 import styled from 'styled-components';
 
-import { makeSelectError, makeSelectLoading, makeSelectRepos } from 'containers/App/selectors';
-import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
+import { makeSelectError, makeSelectLoading, makeSelectAmountsToDonate } from '../../containers/App/selectors';
+import { changeAmount } from './actions';
 import MarsPicture from './../../static/mars-planet-min.png';
 import { SocialButtons } from './SocialButtons';
 import messages from './messages';
@@ -18,6 +16,7 @@ import { YearsAgo } from './YearsAgo';
 import H1 from '../../components/H1/index';
 import { Reason } from './Reason';
 import { EmailSubscription } from './EmailSubscription';
+import RadioGroup from '../../components/RadioGroup/index';
 
 const ScrollableMarker = styled.div`
   font-size: 6rem;
@@ -74,6 +73,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
           <Parallax.Layer offset={0.8} speed={0.3} >
+            <RadioGroup onToggle={this.props.onToggleAmount} values={this.props.amountsToDonate} />
             <p className="readable"><FormattedMessage {...messages.howmuchParagraph} />
               <br />
               <FormattedMessage {...messages.progressParagraph} />
@@ -97,25 +97,29 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
 }
 
 HomePage.propTypes = {
-  onSubmitForm: React.PropTypes.func,
-  username: React.PropTypes.string,
+  amountsToDonate: React.PropTypes.oneOfType([
+    React.PropTypes.object,
+    React.PropTypes.array,
+  ]),
+  onToggleAmount: React.PropTypes.func,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
     onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: (evt) => {
+    /* onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
-    },
+    },*/
+    onToggleAmount: (evt) => dispatch(changeAmount(evt.target.value)),
+
   };
 }
 
 const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
+  amountsToDonate: makeSelectAmountsToDonate(),
 });
 
 // Wrap the component to inject dispatch and state into it
