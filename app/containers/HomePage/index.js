@@ -73,7 +73,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
           <Parallax.Layer offset={0.8} speed={0.3} >
-            <RadioGroup onToggle={this.props.onToggleAmount} values={this.props.amountsToDonate} />
+            <RadioGroup onToggle={this.props.onToggleAmount} name="selectDonation" values={this.props.amountsToDonate} />
             <p className="readable"><FormattedMessage {...messages.howmuchParagraph} />
               <br />
               <FormattedMessage {...messages.progressParagraph} />
