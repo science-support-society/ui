@@ -1,13 +1,13 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { FormattedMessage } from 'react-intl';
+import React from "react";
+import { shallow } from "enzyme";
+import { FormattedMessage } from "react-intl";
 
-import H1 from 'components/H1';
-import messages from '../messages';
-import FeaturePage from '../index';
+import H1 from "components/H1";
+import messages from "../messages";
+import FeaturePage from "../index";
 
-describe('<FeaturePage />', () => {
-  it('should render its heading', () => {
+describe("<FeaturePage />", () => {
+  it("should render its heading", () => {
     const renderedComponent = shallow(
       <FeaturePage />
     );

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import RadioOption from '../RadioOption';
+import RadioOption from "../RadioOption";
 
 function RadioGroup(props) {
   let content = ("aaa no props");

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import * as TwitterIcon from 'react-icons/lib/ti/social-twitter';
-import * as FacebookIcon from 'react-icons/lib/ti/social-facebook';
-import * as YoutubeIcon from 'react-icons/lib/ti/social-youtube';
+import React from "react";
+import styled from "styled-components";
+import * as TwitterIcon from "react-icons/lib/ti/social-twitter";
+import * as FacebookIcon from "react-icons/lib/ti/social-facebook";
+import * as YoutubeIcon from "react-icons/lib/ti/social-youtube";
 
 const StickyWrapper = styled.div`
   z-index: 40;
@@ -10,7 +10,7 @@ const StickyWrapper = styled.div`
   top: 3vmin;
   right: 0;`;
 
-const BUTTON_SIZE = '4rem';
+const BUTTON_SIZE = "4rem";
 
 const SocialButton = styled.div`
   color: white;
@@ -29,9 +29,9 @@ export class SocialButtons extends React.PureComponent { // eslint-disable-line 
 
   style = {
     socialButton: {
-      width: '50%',
-      height: '50%',
-      margin: '1rem 0 0 1rem',
+      width: "50%",
+      height: "50%",
+      margin: "1rem 0 0 1rem",
     },
   };
 

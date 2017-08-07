@@ -6,12 +6,12 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React from 'react';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import React from "react";
+import Helmet from "react-helmet";
+import styled from "styled-components";
 
-import withProgressBar from 'components/ProgressBar';
-import { Background } from './Background';
+import withProgressBar from "components/ProgressBar";
+import { Background } from "./Background";
 
 const AppWrapper = styled.div`
   margin: 1rem auto;
@@ -28,7 +28,7 @@ export function App(props) {
         titleTemplate="%s - React.js Boilerplate"
         defaultTitle="React.js Boilerplate"
         meta={[
-          { name: 'description', content: 'A React.js Boilerplate application' },
+          { name: "description", content: "A React.js Boilerplate application" },
         ]}
       />
       <Background />

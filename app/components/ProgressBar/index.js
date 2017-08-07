@@ -1,5 +1,5 @@
-import React from 'react';
-import ProgressBar from './ProgressBar';
+import React from "react";
+import ProgressBar from "./ProgressBar";
 
 function withProgressBar(WrappedComponent) {
   class AppWithProgressBar extends React.Component {
@@ -37,7 +37,7 @@ function withProgressBar(WrappedComponent) {
     }
 
     componentWillUnmount() {
-      // Unset unsubscribeHistory since it won't be garbage-collected.
+      // Unset unsubscribeHistory since it won"t be garbage-collected.
       this.unsubscribeHistory = undefined;
     }
 

@@ -2,18 +2,18 @@
  * Homepage selectors
  */
 
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
-const selectHome = (state) => state.get('home');
+const selectHome = (state) => state.get("home");
 
 const makeSelectUsername = () => createSelector(
   selectHome,
-  (homeState) => homeState.get('username')
+  (homeState) => homeState.get("username")
 );
 
 const makeSelectEmail = () => createSelector(
   selectHome,
-  (globalState) => globalState.get('email')
+  (globalState) => globalState.get("email")
 );
 
 export {

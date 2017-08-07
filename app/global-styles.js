@@ -1,6 +1,6 @@
-import { injectGlobal } from 'styled-components';
-import Stars from './static/stars.png';
-import Twinkle from './static/twinkling.png';
+import { injectGlobal } from "styled-components";
+import Stars from "./static/stars.png";
+import Twinkle from "./static/twinkling.png";
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`

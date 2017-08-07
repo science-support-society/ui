@@ -4,9 +4,9 @@
  *
 */
 
-import React, { PropTypes } from 'react';
-import Wrapper from './Wrapper';
-import Percent from './Percent';
+import React, { PropTypes } from "react";
+import Wrapper from "./Wrapper";
+import Percent from "./Percent";
 
 class ProgressBar extends React.Component {
 

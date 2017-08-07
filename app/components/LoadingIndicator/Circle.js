@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { PropTypes } from "react";
+import styled, { keyframes } from "styled-components";
 
 const circleFadeDelay = keyframes`
   0%,
@@ -27,7 +27,7 @@ const Circle = (props) => {
     `}
 
     &:before {
-      content: '';
+      content: "";
       display: block;
       margin: 0 auto;
       width: 15%;

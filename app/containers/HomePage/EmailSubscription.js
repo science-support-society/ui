@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import styled from 'styled-components';
-import { subscribe } from './actions';
-import { makeSelectEmail } from './selectors';
+import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import styled from "styled-components";
+import { subscribe } from "./actions";
+import { makeSelectEmail } from "./selectors";
 
 const EmailInput = styled.input`
   background-color: white;
@@ -56,8 +56,8 @@ export function mapDispatchToProps(dispatch) {
   return {
     onSubmitForm: (evt) => {
       // if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      console.log('subscribe event', evt);
-      dispatch(subscribe('fake email'));
+      console.log("subscribe event", evt);
+      dispatch(subscribe("fake email"));
     },
   };
 }

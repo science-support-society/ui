@@ -1,20 +1,20 @@
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
-const selectGlobal = (state) => state.get('global');
+const selectGlobal = (state) => state.get("global");
 
 const makeSelectLoading = () => createSelector(
   selectGlobal,
-  (globalState) => globalState.get('loading')
+  (globalState) => globalState.get("loading")
 );
 
 const makeSelectError = () => createSelector(
   selectGlobal,
-  (globalState) => globalState.get('error')
+  (globalState) => globalState.get("error")
 );
 
 export const makeSelectAmountsToDonate = () => createSelector(
   selectGlobal,
-  (state) => state.get('amountsToDonate')
+  (state) => state.get("amountsToDonate")
 );
 
 const makeSelectLocationState = () => {
@@ -22,7 +22,7 @@ const makeSelectLocationState = () => {
   let prevRoutingStateJS;
 
   return (state) => {
-    const routingState = state.get('route'); // or state.route
+    const routingState = state.get("route"); // or state.route
 
     if (!routingState.equals(prevRoutingState)) {
       prevRoutingState = routingState;

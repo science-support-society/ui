@@ -1,7 +1,7 @@
-import { FormattedMessage } from 'react-intl';
-import React from 'react';
-import H2 from '../../components/H2/index';
-import messages from './messages';
+import { FormattedMessage } from "react-intl";
+import React from "react";
+import H2 from "../../components/H2/index";
+import messages from "./messages";
 
 export class Reason extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 

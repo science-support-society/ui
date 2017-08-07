@@ -1,12 +1,12 @@
-import { fromJS } from 'immutable';
+import { fromJS } from "immutable";
 
 import {
   selectHome,
   makeSelectUsername,
-} from '../selectors';
+} from "../selectors";
 
-describe('selectHome', () => {
-  it('should select the home state', () => {
+describe("selectHome", () => {
+  it("should select the home state", () => {
     const homeState = fromJS({
       userData: {},
     });
@@ -17,10 +17,10 @@ describe('selectHome', () => {
   });
 });
 
-describe('makeSelectUsername', () => {
+describe("makeSelectUsername", () => {
   const usernameSelector = makeSelectUsername();
-  it('should select the username', () => {
-    const username = 'mxstbr';
+  it("should select the username", () => {
+    const username = "mxstbr";
     const mockedState = fromJS({
       home: {
         username,

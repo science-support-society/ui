@@ -1,5 +1,5 @@
-import React from 'react';
-import { injectIntl, intlShape } from 'react-intl';
+import React from "react";
+import { injectIntl, intlShape } from "react-intl";
 
 const RadioOption = ({ value, key, message, onToggle, intl }) => (
   <div>

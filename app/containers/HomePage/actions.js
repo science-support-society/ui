@@ -15,8 +15,8 @@
  *    }
  */
 
-export const SUBSCRIBE = 'sciencesupport/EmailSubscription/SUBSCRIBE';
-export const CHANGE_AMOUNT = 'sciencesupport/HomeContainer/CHANGE_AMOUNT';
+export const SUBSCRIBE = "sciencesupport/EmailSubscription/SUBSCRIBE";
+export const CHANGE_AMOUNT = "sciencesupport/HomeContainer/CHANGE_AMOUNT";
 
 export function subscribe(email) {
   return {

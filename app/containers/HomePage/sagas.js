@@ -2,13 +2,13 @@
  * Gets the repositories of the user from Github
  */
 
-import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
-import { LOCATION_CHANGE } from 'react-router-redux';
-import { LOAD_REPOS } from 'containers/App/constants';
-import { reposLoaded, repoLoadingError } from 'containers/App/actions';
+import { take, call, put, select, cancel, takeLatest } from "redux-saga/effects";
+import { LOCATION_CHANGE } from "react-router-redux";
+import { LOAD_REPOS } from "containers/App/constants";
+import { reposLoaded, repoLoadingError } from "containers/App/actions";
 
-import request from 'utils/request';
-import { makeSelectUsername, makeSelectEmail } from 'containers/HomePage/selectors';
+import request from "utils/request";
+import { makeSelectUsername, makeSelectEmail } from "containers/HomePage/selectors";
 
 /**
  * Github repos request/response handler
@@ -19,7 +19,7 @@ export function* getRepos() {
   const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
 
   try {
-    // Call our request helper (see 'utils/request')
+    // Call our request helper (see "utils/request")
     const repos = yield call(request, requestURL);
     yield put(reposLoaded(repos, username));
   } catch (err) {
@@ -43,7 +43,7 @@ export function* githubData() {
 
 export function* registerNewSubscriber() {
   /* const email = yield select(makeSelectEmail());
-  const requestURL = 'here_path_to_post';
+  const requestURL = "here_path_to_post";
   yield call(request, requestURL);*/
 }
 

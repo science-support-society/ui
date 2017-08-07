@@ -1,22 +1,22 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { FormattedMessage } from 'react-intl';
-import Parallax from 'react-springy-parallax/dist';
-import * as ArrowDownIcon from 'react-icons/lib/md/keyboard-arrow-down';
-import styled from 'styled-components';
+import React from "react";
+import Helmet from "react-helmet";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { FormattedMessage } from "react-intl";
+import Parallax from "react-springy-parallax/dist";
+import * as ArrowDownIcon from "react-icons/lib/md/keyboard-arrow-down";
+import styled from "styled-components";
 
-import { makeSelectError, makeSelectLoading, makeSelectAmountsToDonate } from '../../containers/App/selectors';
-import { changeAmount } from './actions';
-import MarsPicture from './../../static/mars-planet-min.png';
-import { SocialButtons } from './SocialButtons';
-import messages from './messages';
-import { YearsAgo } from './YearsAgo';
-import H1 from '../../components/H1/index';
-import { Reason } from './Reason';
-import { EmailSubscription } from './EmailSubscription';
-import RadioGroup from '../../components/RadioGroup/index';
+import { makeSelectError, makeSelectLoading, makeSelectAmountsToDonate } from "../../containers/App/selectors";
+import { changeAmount } from "./actions";
+import MarsPicture from "./../../static/mars-planet-min.png";
+import { SocialButtons } from "./SocialButtons";
+import messages from "./messages";
+import { YearsAgo } from "./YearsAgo";
+import H1 from "../../components/H1/index";
+import { Reason } from "./Reason";
+import { EmailSubscription } from "./EmailSubscription";
+import RadioGroup from "../../components/RadioGroup/index";
 
 const ScrollableMarker = styled.div`
   font-size: 6rem;
@@ -58,7 +58,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
         <Helmet
           title="Mars"
           meta={[
-            { name: 'description', content: 'Science support project' },
+            { name: "description", content: "Science support project" },
           ]}
         />
         {/* effect={linearEffect}*/}
