@@ -15,7 +15,7 @@ import messages from "./messages";
 import { YearsAgo } from "./YearsAgo";
 import H1 from "../../components/H1/index";
 import { Reason } from "./Reason";
-import { EmailSubscription } from "./EmailSubscription";
+import EmailSubscription from "./EmailSubscription";
 import RadioGroup from "../../components/RadioGroup/index";
 
 const ScrollableMarker = styled.div`
@@ -106,7 +106,6 @@ HomePage.propTypes = {
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
     /* onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());

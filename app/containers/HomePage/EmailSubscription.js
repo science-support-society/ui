@@ -57,7 +57,7 @@ function mapDispatchToProps(dispatch) {
   return {
     onSubmitForm: (evt) => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      console.log('subscribe event', evt.target.value, this.props.email);
+      console.log("subscribe event", evt.target.value, this.props.email);
       dispatch(subscribe(evt.target.value));
     },
   };
