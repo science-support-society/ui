@@ -15,7 +15,7 @@ const EmailInput = styled.input`
   border-radius: 5px;
 `;
 
-const SubscribeButton = styled.a`
+const SubscribeButton = styled.button`
   height: 3.5rem;
   font-size: 1.5rem;
   color: black;
@@ -30,7 +30,8 @@ const NoSpam = styled.div`
   letter-spacing: 0.1rem;
 `;
 
-export class EmailSubscription extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class EmailSubscription extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
 
   render() {
     return (
@@ -38,7 +39,7 @@ export class EmailSubscription extends React.PureComponent { // eslint-disable-l
         <form onSubmit={this.props.onSubmitForm} name="subscribe" className="subscribeForm">
           <div>
             <EmailInput type="email" value={this.props.email} />
-            <SubscribeButton onClick={this.props.onSubmitForm}>Subscribe</SubscribeButton>
+            <SubscribeButton type="submit" onClick={this.props.onSubmitForm}>Subscribe</SubscribeButton>
           </div>
           <NoSpam>We dont spam</NoSpam>
         </form>
@@ -52,12 +53,12 @@ EmailSubscription.propTypes = {
   email: React.PropTypes.string,
 };
 
-export function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     onSubmitForm: (evt) => {
-      // if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      console.log("subscribe event", evt);
-      dispatch(subscribe("fake email"));
+      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
+      console.log('subscribe event', evt.target.value, this.props.email);
+      dispatch(subscribe(evt.target.value));
     },
   };
 }
