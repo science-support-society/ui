@@ -110,7 +110,10 @@ export function mapDispatchToProps(dispatch) {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
     },*/
-    onToggleAmount: (evt) => dispatch(changeAmount(evt.target.value)),
+    onToggleAmount: (evt) => {
+      console.log("try to dispatch amount change");
+      dispatch(changeAmount(evt.target.value));
+    },
 
   };
 }

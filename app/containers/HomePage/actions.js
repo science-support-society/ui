@@ -30,5 +30,5 @@ export function changeAmount(amount) {
   return {
     type: CHANGE_AMOUNT,
     amount,
-  }
+  };
 }

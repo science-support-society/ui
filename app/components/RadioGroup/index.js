@@ -1,19 +1,29 @@
 import React from "react";
 
 import RadioOption from "../RadioOption";
+import Button from "../Button";
 
-function RadioGroup(props) {
+const style = {
+  fontFamily: "Lucida Grande, Tahoma, Verdana, sans-serif",
+  padding: "40px",
+  overflow: "hidden",
+  zIndex: 100,
+};
+
+function RadioGroup({ name, onToggle, values }) {
   let content = ("Radio group have no props");
 
-  if (props.values) {
-    content = props.values.map((value) => (
-      <RadioOption key={value} value={value} name={props.name} onChange={props.onToggle} />
+  if (values) {
+    content = values.map((value, i) => (
+      <RadioOption key={i} value={value} name={name} onToggle={onToggle} />
     ));
   }
+  const log = () => console.log("be");
 
   return (
-    <div>
+    <div style={style}>
       {content}
+      <Button onClick={log}>bebebebe</Button>
     </div>
   );
 }
