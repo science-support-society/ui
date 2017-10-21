@@ -7,11 +7,9 @@ import { makeSelectEmail } from "./selectors";
 
 const EmailInput = styled.input`
   background-color: white;
-  type: email;
   width: 20rem;
   height: 3.5rem;
   font-size: 1.5rem;
-  color: black;
   border-radius: 5px;
 `;
 
@@ -31,15 +29,20 @@ const NoSpam = styled.div`
 `;
 
 class EmailSubscription extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.email = props.email;
+  }
 
+  email;
 
   render() {
     return (
       <div className="readable newChapter">
-        <form onSubmit={this.props.onSubmitForm} name="subscribe" className="subscribeForm">
+        <form onSubmit={() => this.props.subscribeEmail(this.props.email)} name="subscribe" className="subscribeForm">
           <div>
-            <EmailInput type="email" value={this.props.email} />
-            <SubscribeButton type="submit" onClick={this.props.onSubmitForm}>Subscribe</SubscribeButton>
+            <EmailInput type="email" value={this.email} />
+            <SubscribeButton type="click" onClick={this.props.subscribeEmail(this.email)}>Subscribe</SubscribeButton>
           </div>
           <NoSpam>We dont spam</NoSpam>
         </form>
@@ -49,16 +52,15 @@ class EmailSubscription extends React.PureComponent { // eslint-disable-line rea
 }
 
 EmailSubscription.propTypes = {
-  onSubmitForm: React.PropTypes.func,
+  subscribeEmail: React.PropTypes.func,
   email: React.PropTypes.string,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    onSubmitForm: (evt) => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      console.log("subscribe event", evt.target.value, this.props.email);
-      dispatch(subscribe(evt.target.value));
+    subscribeEmail: (evt) => {
+      console.log("bebe", evt);
+      dispatch(subscribe(evt));
     },
   };
 }

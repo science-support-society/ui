@@ -13,7 +13,10 @@ const makeSelectUsername = () => createSelector(
 
 const makeSelectEmail = () => createSelector(
   selectHome,
-  (globalState) => globalState.get("email")
+  (globalState) => {
+    const email = globalState.get("email");
+    return email || "";
+  }
 );
 
 export {
