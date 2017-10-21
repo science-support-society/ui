@@ -12,7 +12,8 @@ const StickyWrapper = styled.div`
 
 const BUTTON_SIZE = "4rem";
 
-const SocialButton = styled.div`
+const SocialButton = styled.a`
+  display: block;
   color: white;
   width: ${BUTTON_SIZE};
   height: ${BUTTON_SIZE};
@@ -39,7 +40,7 @@ export class SocialButtons extends React.PureComponent { // eslint-disable-line 
     return (
       <StickyWrapper>
         <SocialButton><TwitterIcon style={this.style.socialButton} /></SocialButton>
-        <SocialButton><FacebookIcon style={this.style.socialButton} /></SocialButton>
+        <SocialButton href="https://www.facebook.com/sciencesupportsociety/"><FacebookIcon style={this.style.socialButton} /></SocialButton>
         <SocialButton><YoutubeIcon style={this.style.socialButton} /></SocialButton>
       </StickyWrapper>
     );
