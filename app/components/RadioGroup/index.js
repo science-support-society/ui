@@ -2,13 +2,28 @@ import React from "react";
 import styled from "styled-components";
 
 import ToggleOption from "../RadioOption";
-import Button from "../Button";
 
 const Wrapper = styled.div`
-  font-family: Lucida Grande, Tahoma, Verdana, sans-serif;
   padding: 40px;
   overflow: hidden;
-  // z-index: 100;
+  width: 80%;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2vmin;
+  margin: auto
+`;
+
+const SubmitButton = styled.button`
+  width: 96%;
+  background-color: #3EC28F;
+  box-shadow: none;
+  padding: 3vmin 6vmin;
+  margin: 3% 1.5%;
+  cursor: pointer;
+  
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
 `;
 
 function ToggleGroup({ name, onToggle, values }) {
@@ -24,7 +39,7 @@ function ToggleGroup({ name, onToggle, values }) {
   return (
     <Wrapper>
       {content}
-      <Button onClick={log}>SUBMIT MY ANSWER</Button>
+      <SubmitButton onClick={log}>SUBMIT MY ANSWER</SubmitButton>
     </Wrapper>
   );
 }

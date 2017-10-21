@@ -40,6 +40,14 @@ p {
   max-width: 960px;
 }
 
+.centred-text{
+  text-align: center;
+}
+
+:focus {
+  outline: none;
+}
+
 @keyframes move-twink-back {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}

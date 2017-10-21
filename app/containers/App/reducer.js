@@ -27,7 +27,7 @@ const initialState = fromJS({
     repositories: false,
     email: undefined,
   },
-  amountsToDonate: [1, 2, 3.5],
+  amountsToDonate: [3, 10, 30, 100, 300, 1000],
 });
 
 function appReducer(state = initialState, action) {

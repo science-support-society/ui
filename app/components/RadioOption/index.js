@@ -5,11 +5,13 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: inline-block;
-  padding-left: 10px;
+  margin: 1% 1.6%;
+  width: 30%;
   
   input:checked + label {
-    background-color: #A5DC86;
+    background-color: #3EC28F;
     box-shadow: none;
+    color: rgba(0, 0, 0, 0.6);
   }
 `;
 
@@ -20,31 +22,28 @@ height: 1px;
 width: 1px;
 border: 0;
 overflow: hidden;
-
-:checked {
-  background-color: #A5DC86;
-  box-shadow: none;
-}
 `;
 
 const Label = styled.label`
-float: left;
 display: inline-block;
-width: 60px;
+float: left;
+width: 100%;
 background-color: #e4e4e4;
-color: rgba(0, 0, 0, 0.6);
-font-size: 14px;
-font-weight: normal;
-text-align: center;
+color: #3EC28F
 text-shadow: none;
-padding: 6px 14px;
+padding: 3vmin 6vmin;
 border: 1px solid rgba(0, 0, 0, 0.2);
 border-radius: 4px;
 box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-transition: all 0.1s ease-in-out;
+transition: all 0.1s ease-  in-out;
 
-:hover {
+&:hover {
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: #b3e7d3;
+}
+&::before {
+  content: "$ ";
 }
 `;
 
