@@ -72,17 +72,17 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           <Parallax.Layer offset={0.5} speed={0.3}>
             <H1><FormattedMessage {...messages.participateHeader} /></H1>
           </Parallax.Layer>
-          <Parallax.Layer offset={0.8} speed={0.3} >
-            <RadioGroup onToggle={this.props.onToggleAmount} name="selectDonation" values={this.props.amountsToDonate} />
+          <Parallax.Layer offset={0.8} speed={3}>
+            <ScrollableMarker><ArrowDownIcon onClick={() => this.parallax.scrollTo(0.25)} /></ScrollableMarker>
+          </Parallax.Layer>
+          <Parallax.Layer offset={1} speed={0.3} >
             <p className="readable"><FormattedMessage {...messages.howmuchParagraph} />
               <br />
               <FormattedMessage {...messages.progressParagraph} />
             </p>
+            <RadioGroup onToggle={this.props.onToggleAmount} name="selectDonation" values={this.props.amountsToDonate} />
           </Parallax.Layer>
-          <Parallax.Layer offset={0.8} speed={3}>
-            <ScrollableMarker><ArrowDownIcon onClick={() => this.parallax.scrollTo(0.25)} /></ScrollableMarker>
-          </Parallax.Layer>
-          <Parallax.Layer offset={1} speed={0}>
+          <Parallax.Layer offset={1.4} speed={0}>
             <YearsAgo />
             <br /><br />
             <Reason />

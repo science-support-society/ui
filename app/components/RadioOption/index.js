@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Radio = styled.input`
+const ToggleButton = styled.input`
 position: absolute !important;
 clip: rect(0, 0, 0, 0);
 height: 1px;
@@ -48,15 +48,15 @@ transition: all 0.1s ease-in-out;
 }
 `;
 
-const RadioOption = ({ value, message, onToggle, name, intl }) => {
+const ToggleOption = ({ value, message, onToggle, name, intl }) => {
   const id = `${name}_${value}`;
   return (<Wrapper>
-    <Radio type="radio" id={id} value={value} name={name} onChange={(e) => onToggle(e)} />
+    <ToggleButton type="radio" id={id} value={value} name={name} onChange={(e) => onToggle(e)} />
     <Label htmlFor={id} > {message ? intl.formatMessage(message) : value}</Label>
   </Wrapper>);
 };
 
-RadioOption.propTypes = {
+ToggleOption.propTypes = {
   value: React.PropTypes.any.isRequired,
   message: React.PropTypes.object,
   onToggle: React.PropTypes.func,
@@ -64,4 +64,4 @@ RadioOption.propTypes = {
   name: React.PropTypes.string,
 };
 
-export default injectIntl(RadioOption);
+export default injectIntl(ToggleOption);
