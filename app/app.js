@@ -7,6 +7,7 @@
 
 // Needed for redux-saga es6 generator support
 import "babel-polyfill";
+import * as firebase from "firebase";
 
 import * as OfflinePluginRuntime from "offline-plugin/runtime";
 // Import all the third party stuff
@@ -58,6 +59,17 @@ openSansObserver.load().then(() => {
 }, () => {
   document.body.classList.remove("fontLoaded");
 });
+
+const config = {
+  apiKey: "AIzaSyCxMFUrN1FKkhTYxOs5vaITlyz3kWsMyLY",
+  authDomain: "science-support.firebaseapp.com",
+  databaseURL: "https://science-support.firebaseio.com",
+  projectId: "science-support",
+  storageBucket: "science-support.appspot.com",
+  messagingSenderId: "404950909952",
+};
+firebase.initializeApp(config);
+firebase.auth().signInAnonymously();
 
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router
