@@ -15,12 +15,12 @@
  *    }
  */
 
-export const SUBSCRIBE = "sciencesupport/EmailSubscription/SUBSCRIBE";
+export const SUBSCRIBE_EMAIL = "sciencesupport/EmailSubscription/SUBSCRIBE";
 export const CHANGE_AMOUNT = "sciencesupport/HomeContainer/CHANGE_AMOUNT";
 
 export function subscribe(email) {
   return {
-    type: SUBSCRIBE,
+    type: SUBSCRIBE_EMAIL,
     email,
   };
 }

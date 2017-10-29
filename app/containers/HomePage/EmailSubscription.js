@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 import styled from "styled-components";
 import { subscribe } from "./actions";
-import { makeSelectEmail } from "./selectors";
 
 const EmailInput = styled.input`
   background-color: white;
@@ -11,6 +9,7 @@ const EmailInput = styled.input`
   height: 3.5rem;
   font-size: 1.5rem;
   border-radius: 5px;
+  color: black;
 `;
 
 const SubscribeButton = styled.button`
@@ -28,45 +27,34 @@ const NoSpam = styled.div`
   letter-spacing: 0.1rem;
 `;
 
-class EmailSubscription extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  constructor(props) {
-    super(props);
-    this.email = props.email;
-  }
+let email;
 
-  email;
+// const subscribeEmail = () => {
+//   console.log("please subscribe me", email);
+// };
 
-  render() {
-    return (
-      <div className="readable newChapter">
-        <form onSubmit={() => this.props.subscribeEmail(this.props.email)} name="subscribe" className="subscribeForm">
-          <div>
-            <EmailInput type="email" value={this.email} />
-            <SubscribeButton type="click" onClick={this.props.subscribeEmail(this.email)}>Subscribe</SubscribeButton>
-          </div>
-          <NoSpam>We dont spam</NoSpam>
-        </form>
+const EmailSub = (props) => (
+  <div className="readable newChapter">
+    <form name="subscribe" className="subscribeForm">
+      <div>
+        <EmailInput type="email" onChange={(e) => (email = e.target.value)} />
+        <SubscribeButton type="button" onClick={() => props.subscribeEmail(email)}>Subscribe</SubscribeButton>
       </div>
-    );
-  }
-}
+      <NoSpam>We dont spam</NoSpam>
+    </form>
+  </div>);
 
-EmailSubscription.propTypes = {
+
+EmailSub.propTypes = {
   subscribeEmail: React.PropTypes.func,
-  email: React.PropTypes.string,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    subscribeEmail: (evt) => {
-      console.log("bebe", evt);
-      dispatch(subscribe(evt));
+    subscribeEmail: (emailV) => {
+      dispatch(subscribe(emailV));
     },
   };
 }
 
-const mapStateToProps = createStructuredSelector({
-  email: makeSelectEmail(),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(EmailSubscription);
+export default connect(() => ({}), mapDispatchToProps)(EmailSub);

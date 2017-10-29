@@ -10,19 +10,20 @@
  *   return state.set("yourStateVariable", true);
  */
 import { fromJS } from "immutable";
-import {CHANGE_AMOUNT, SUBSCRIBE} from "./actions";
+import { CHANGE_AMOUNT, SUBSCRIBE_EMAIL } from "./actions";
 
 // The initial state of the App
 const initialState = fromJS({
-  username: "",
   email: "",
 });
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case SUBSCRIBE:
+    case SUBSCRIBE_EMAIL:
+      // TODO: fetch here
       return state.set("email", action.email);
     case CHANGE_AMOUNT:
+    // TODO: fetch here
       return state.set("amount", action.amount);
     default:
       return state;
