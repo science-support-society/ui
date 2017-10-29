@@ -15,6 +15,10 @@ body {
   overflow: hidden;
 }
 
+::-webkit-scrollbar { 
+  display: none; 
+}
+
 p {
   font-size: 2vmin;
   letter-spacing: 0.2vmin;
