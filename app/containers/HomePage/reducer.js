@@ -21,6 +21,11 @@ function homeReducer(state = initialState, action) {
   switch (action.type) {
     case SUBSCRIBE_EMAIL:
       // TODO: fetch here
+      console.log("firebase", firebase);
+      let database = firebase.database();
+      database.ref("subscribers").push({
+        email: action.email,
+      });
       return state.set("email", action.email);
     case CHANGE_AMOUNT:
     // TODO: fetch here
