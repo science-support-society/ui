@@ -15,7 +15,7 @@ const ImageCaption = styled.span`
    left: 1rem; 
    width: 100%;
    
-   @media (max-width: 400px) {
+   @media (max-width: 414px) {
     font-size: 2vmin;
     letter-spacing: 0.1vmin;
   }

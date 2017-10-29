@@ -10,6 +10,10 @@ const EmailInput = styled.input`
   font-size: 1.5rem;
   border-radius: 5px;
   color: black;
+  
+  @media (max-width: 414px) {
+    width: 60%;
+  }
 `;
 
 const SubscribeButton = styled.button`
@@ -27,16 +31,21 @@ const NoSpam = styled.div`
   letter-spacing: 0.1rem;
 `;
 
+const SubscriptionWrapper = styled.div`
+@media (max-width: 414px) {
+  text-align: center;
+}`;
+
 let email;
 
 const EmailSub = (props) => (
-  <div className="readable newChapter">
-    <form name="subscribe" className="subscribeForm">
-      <div>
+  <div className="readable newChapter emailSub" >
+    <form name="subscribe">
+      <SubscriptionWrapper>
         <EmailInput type="email" onChange={(e) => (email = e.target.value)} />
         <SubscribeButton type="button" onClick={() => props.subscribeEmail(email)}>Subscribe</SubscribeButton>
-      </div>
-      <NoSpam>We dont spam</NoSpam>
+        <NoSpam>We dont spam</NoSpam>
+      </SubscriptionWrapper>
     </form>
   </div>);
 

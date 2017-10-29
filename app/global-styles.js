@@ -24,7 +24,7 @@ p {
   letter-spacing: 0.2vmin;
   text-align: left;
   
-  @media (max-width: 400px) {
+  @media (max-width: 414px) {
     font-size: 1rem;
     letter-spacing: 0.1rem;
   }
@@ -42,6 +42,15 @@ p {
 .readable {
   margin: auto;
   max-width: 960px;
+
+  @media (max-width: 414px) {
+    font-weight: 300;
+  }
+}
+.readable.newChapter.emailSub {
+  @media (max-width: 414px) {
+    padding-top: 5rem;
+  }
 }
 
 .centred-text{

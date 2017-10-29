@@ -8,7 +8,11 @@ const StickyWrapper = styled.div`
   z-index: 40;
   position: fixed;
   top: 3vmin;
-  right: 0;`;
+  right: 0; 
+  @media (max-width: 414px) {
+    display: none;
+  }
+`;
 
 const BUTTON_SIZE = "4rem";
 
