@@ -22,11 +22,14 @@ function homeReducer(state = initialState, action) {
     case SUBSCRIBE_EMAIL:
       firebase.database().ref("subscribers").push({
         email: action.email,
+      }).then(() => {
+        firebase.database().ref(`users/${firebase.auth().currentUser.uid}`).update({
+          email: action.email,
+        });
       });
       return state.set("email", action.email);
     case CHANGE_AMOUNT:
-      firebase.database().ref("users").set({
-        uid: firebase.auth().currentUser.uid,
+      firebase.database().ref(`users/${firebase.auth().currentUser.uid}`).update({
         amount: action.amount,
       });
       return state.set("amount", action.amount);
