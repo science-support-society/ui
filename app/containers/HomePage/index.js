@@ -6,6 +6,7 @@ import { FormattedMessage } from "react-intl";
 import Parallax from "react-springy-parallax/dist";
 import * as ArrowDownIcon from "react-icons/lib/md/keyboard-arrow-down";
 import styled from "styled-components";
+import * as firebase from "firebase";
 
 import { makeSelectError, makeSelectLoading, makeSelectAmountsToDonate } from "../../containers/App/selectors";
 import { changeAmount } from "./actions";
@@ -50,8 +51,8 @@ const ContentWrapper = styled.article`
 `;
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-
   render() {
+    console.log("bebe");
     // const linearEffect = (animation, toValue) => Animated.timing(animation, { toValue, duration: 0 });
     return (
       <ContentWrapper>

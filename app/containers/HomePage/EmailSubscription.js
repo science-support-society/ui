@@ -29,10 +29,6 @@ const NoSpam = styled.div`
 
 let email;
 
-// const subscribeEmail = () => {
-//   console.log("please subscribe me", email);
-// };
-
 const EmailSub = (props) => (
   <div className="readable newChapter">
     <form name="subscribe" className="subscribeForm">

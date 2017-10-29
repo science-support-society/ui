@@ -3,6 +3,10 @@
     "subscribers": {
       ".read": false,
       ".write": true
+    },
+    "users": {
+      ".read": false,
+      ".write": "auth != null"
     }
   }
 }
